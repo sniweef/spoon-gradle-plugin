@@ -95,6 +95,9 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   /** The shard option to specify whether to shard tests or not. */
   boolean shard;
 
+  /** The shard option to specify whether to shard tests base on time cost. */
+  boolean smartShard
+
   /** Execute the tests device by device */
   boolean sequential
 
@@ -143,6 +146,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setNoAnimations(noAnimations)
         .setCodeCoverage(codeCoverage)
         .setShard(shard)
+        .setSmartShard(smartShard)
         .setSequential(sequential)
         .setGrantAll(grantAllPermissions)
     def instrumentationArgs = this.instrumentationArgs

@@ -125,6 +125,7 @@ class SpoonPlugin implements Plugin<Project> {
         failIfNoDeviceConnected = config.failIfNoDeviceConnected
         codeCoverage = config.codeCoverage
         shard = config.shard
+        smartShard = config.smartShard
         grantAllPermissions = config.grantAllPermissions
         if (config.adbTimeout != -1) {
           // Timeout is defined in seconds in the config.

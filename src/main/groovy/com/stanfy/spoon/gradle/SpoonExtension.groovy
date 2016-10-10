@@ -51,6 +51,9 @@ class SpoonExtension {
   /** The shard option to specify whether to shard tests or not. */
   boolean shard
 
+  /** The shard option to specify whether to shard tests base on time cost. */
+  boolean smartShard
+
   /** Execute the tests device by device */
   boolean sequential
 
