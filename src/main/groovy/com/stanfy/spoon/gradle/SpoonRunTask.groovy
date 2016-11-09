@@ -74,6 +74,9 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   @OutputDirectory
   File output
 
+  /** Source directory */
+  File srcDir
+
   /** Use all the connected devices flag. */
   boolean allDevices
 
@@ -137,6 +140,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setApplicationApk(applicationApk)
         .setInstrumentationApk(instrumentationApk)
         .setOutputDirectory(output)
+        .setSrcDirectory(srcDir)
         .setFailIfNoDeviceConnected(failIfNoDeviceConnected)
         .setDebug(debug)
         .setClassName(className)

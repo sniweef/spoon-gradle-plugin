@@ -42,6 +42,7 @@ spoon {
 
   // Set custom test reports directory (defaults to "spoon")
   baseOutputDir = file("$buildDir/custom-report-dir")
+  srcDir = file("src/")
 
   // Enable setting test class/method-to-be-run from command line. E.g.:
   // $> ../gradlew spoonFreeDebugTest -PspoonClassName=com.stanfy.spoon.example.test.MainActivityTest -PspoonMethodName=testSetText
@@ -65,6 +66,7 @@ spoon {
   codeCoverage = true
 
   grantAllPermissions = true
+  shard = true
   smartShard = true
 }
 
