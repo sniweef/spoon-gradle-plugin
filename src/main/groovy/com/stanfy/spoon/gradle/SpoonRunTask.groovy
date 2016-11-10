@@ -1,5 +1,6 @@
 package com.stanfy.spoon.gradle
 
+import com.android.annotations.Nullable
 import com.android.ddmlib.testrunner.IRemoteAndroidTestRunner
 import com.squareup.spoon.SpoonRunner
 import groovy.transform.PackageScope
@@ -75,9 +76,11 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   File output
 
   /** Source directory */
+  @Nullable
   File srcDir
 
   /** Report directory */
+  @Nullable
   File reportDir
 
   /** Use all the connected devices flag. */
