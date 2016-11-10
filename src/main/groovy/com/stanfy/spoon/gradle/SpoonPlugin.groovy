@@ -116,6 +116,7 @@ class SpoonPlugin implements Plugin<Project> {
         output = new File(outputBase, projectOutput.dirName)
 
         srcDir = config.srcDir
+        reportDir = config.reportDir
         debug = config.debug
         ignoreFailures = config.ignoreFailures
         devices = config.devices

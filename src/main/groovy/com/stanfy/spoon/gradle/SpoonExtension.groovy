@@ -38,6 +38,9 @@ class SpoonExtension {
   /** Source file directory for the smart shard. Should not be null if smartShard is true */
   File srcDir
 
+  /** Report file directory for the smart shard. Should not be null if smartShard is true */
+  File reportDir
+
   /** ADB timeout (in seconds). */
   // Since negative timeouts do not make sense, -1 seems to be a good value to indicate timeout is not set.
   int adbTimeout = -1
