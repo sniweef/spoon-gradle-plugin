@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 apply plugin: 'spoon'
 
 android {
@@ -28,11 +29,44 @@ android {
     free {
 
     }
-    pro {
+    /*pro {
 
-    }
+    }*/
   }
 
+}
+
+def coverageSourceDirs = [
+        'src/main/java'
+]
+
+task jacocoTestReport(type: JacocoReport, dependsOn: "spoon") {
+  group = "Reporting"
+  description = "Generate Jacoco coverage reports after running tests."
+  reports {
+    //xml.enabled = true
+    html.enabled = true
+  }
+  //getReports().getHtml().setDestination(file("$buildDir/reports/jacoco/html"))
+  classDirectories = fileTree(
+          dir: 'build/intermediates/classes/free',
+          includes: ['**/com/**'],
+          excludes: ['**/R.class',
+                     '**/Manifest.class',
+                     '**/Manifest*.class',
+                     '**/BuildConfig.class',
+          ])
+  sourceDirectories = files(coverageSourceDirs)
+  executionData = files("$buildDir/custom-report-dir/free/debug/coverage/merged-coverage.ec")
+  // Bit hacky but fixes https://code.google.com/p/android/issues/detail?id=69174.
+  // We iterate through the compiled .class tree and rename $$ to $.
+  doFirst {
+    new File("$buildDir/intermediates/classes/").eachFileRecurse { file ->
+      if (file.name.contains('$$')) {
+        file.renameTo(file.path.replace('$$', '$'))
+      }
+    }
+  }
 }
 
 spoon {
@@ -43,6 +77,7 @@ spoon {
   // Set custom test reports directory (defaults to "spoon")
   baseOutputDir = file("$buildDir/custom-report-dir")
   srcDir = file("src/")
+  reportDir = file("reports/")
 
   // Enable setting test class/method-to-be-run from command line. E.g.:
   // $> ../gradlew spoonFreeDebugTest -PspoonClassName=com.stanfy.spoon.example.test.MainActivityTest -PspoonMethodName=testSetText

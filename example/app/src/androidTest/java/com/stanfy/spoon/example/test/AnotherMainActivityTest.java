@@ -33,6 +33,7 @@ public class AnotherMainActivityTest extends ActivityInstrumentationTestCase2<Ma
       act.setText(step);
       Spoon.screenshot(act, "step-" + i);
       assertEquals(text.getText().toString(), step);
+      //assertFalse(true);
     }
   }
 }
