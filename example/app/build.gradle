@@ -96,6 +96,7 @@ spoon {
   // numShards = 2
   // shardIndex = 0
 
+  // devices = ["emulator-5554"]
   adbTimeout = 30
 
   codeCoverage = true
@@ -107,10 +108,11 @@ spoon {
 
 repositories {
   mavenCentral()
+  mavenLocal()
 }
 
 dependencies {
-  androidTestCompile "com.squareup.spoon:spoon-client:1.6.4"
+  androidTestCompile "com.squareup.spoon:spoon-client:1.7.1-SmartShard"
 }
 
 // for integration test of this plugin
