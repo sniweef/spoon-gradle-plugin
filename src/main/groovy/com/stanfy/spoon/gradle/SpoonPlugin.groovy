@@ -128,6 +128,9 @@ class SpoonPlugin implements Plugin<Project> {
         codeCoverage = config.codeCoverage
         shard = config.shard
         smartShard = config.smartShard
+        cppCovMobilePath = config.cppCovMobilePath
+        gcnoFilesPath = config.gcnoFilesPath
+        cppCovDstPath = config.cppCovDstPath
         grantAllPermissions = config.grantAllPermissions
         if (config.adbTimeout != -1) {
           // Timeout is defined in seconds in the config.

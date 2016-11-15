@@ -107,6 +107,15 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   /** The shard option to specify whether to shard tests base on time cost. */
   boolean smartShard
 
+  /** The path of cpp coverage files in mobile */
+  String cppCovMobilePath
+
+  /** The obj files path */
+  String gcnoFilesPath
+
+  /** The destination path of cpp coverage files */
+  String cppCovDstPath
+
   /** Execute the tests device by device */
   boolean sequential
 
@@ -158,6 +167,9 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setCodeCoverage(codeCoverage)
         .setShard(shard)
         .setSmartShard(smartShard)
+        .setCppCovMobilePath(cppCovMobilePath)
+        .setGcnoPath(gcnoFilesPath)
+        .setCppCovDstPath(cppCovDstPath)
         .setSequential(sequential)
         .setGrantAll(grantAllPermissions)
     def instrumentationArgs = this.instrumentationArgs
