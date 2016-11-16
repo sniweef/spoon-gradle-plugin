@@ -64,7 +64,7 @@ class SpoonExtension {
   String cppCovMobilePath
 
   /** The obj files path */
-  String gcnoFilesPath
+  String gcnoPath
 
   /** The destination path of cpp coverage files */
   String cppCovDstPath

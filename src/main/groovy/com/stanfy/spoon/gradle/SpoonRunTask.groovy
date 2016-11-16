@@ -111,7 +111,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   String cppCovMobilePath
 
   /** The obj files path */
-  String gcnoFilesPath
+  String gcnoPath
 
   /** The destination path of cpp coverage files */
   String cppCovDstPath
@@ -168,7 +168,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setShard(shard)
         .setSmartShard(smartShard)
         .setCppCovMobilePath(cppCovMobilePath)
-        .setGcnoPath(gcnoFilesPath)
+        .setGcnoPath(gcnoPath)
         .setCppCovDstPath(cppCovDstPath)
         .setSequential(sequential)
         .setGrantAll(grantAllPermissions)
