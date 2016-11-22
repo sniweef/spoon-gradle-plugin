@@ -67,7 +67,7 @@ class SpoonExtension {
   String gcnoPath
 
   /** The destination path of cpp coverage files */
-  String cppCovDstPath
+  //String cppCovDstPath
 
   /** Execute the tests device by device */
   boolean sequential

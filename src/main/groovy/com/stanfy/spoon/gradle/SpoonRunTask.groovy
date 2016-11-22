@@ -114,7 +114,7 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
   String gcnoPath
 
   /** The destination path of cpp coverage files */
-  String cppCovDstPath
+  //String cppCovDstPath
 
   /** Execute the tests device by device */
   boolean sequential
@@ -169,7 +169,6 @@ class SpoonRunTask extends DefaultTask implements VerificationTask {
         .setSmartShard(smartShard)
         .setCppCovMobilePath(cppCovMobilePath)
         .setGcnoPath(gcnoPath)
-        .setCppCovDstPath(cppCovDstPath)
         .setSequential(sequential)
         .setGrantAll(grantAllPermissions)
     def instrumentationArgs = this.instrumentationArgs
